@@ -1,0 +1,18 @@
+TEMAS:
+DES
+AES
+MODOS DE OPERACIÓN
+DIFFIE-HELLMAN
+RSA
+FIRMAS DIGITALES
+
+Evaluación
+1.- Ejercicios por persona (Si son 3 y entregan 100 se evaluan si un equipo de 2 entregan 100, los de 2 tienen ventaja)
+2.- Entrega en tiempo
+
+ENTREGAR A MÁS TARDAR
+Lunes
+02 - Octubre
+
+EXAMEN
+04 - Octubre

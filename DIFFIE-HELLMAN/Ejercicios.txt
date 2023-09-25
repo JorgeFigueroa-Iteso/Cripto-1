@@ -1,0 +1,4 @@
+EJERCICIOS A RESOLVER:
+
+EXAMPLE 8.1
+p = 29, g = 2
