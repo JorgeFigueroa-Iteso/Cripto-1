@@ -27,6 +27,8 @@
 
 ## Diseño de un servicio de seguridad
 
+![Imagen](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/FIRMAS-DIGITALES/aa.jpg)
+
 Objetivo: Proveer integridad, confidencialidad y no repudio usando criptografía de clave pública en una comunicación de dos partes sobre un canal inseguro.
 
 1. **Confidencialidad**
