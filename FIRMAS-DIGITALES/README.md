@@ -105,3 +105,27 @@ Cuando el receptor realiza la verificación de la firma, puede obtener los datos
 ## Conclusion
 
 Este ejemplo demuestra cómo, bajo ciertas circunstancias, un atacante podría potencialmente manipular un esquema de firma RSA para hacer que un receptor crea que un mensaje falso es verídico.
+
+# 10.7 Ataque de Intermediario en un Esquema de Firma Digital RSA
+
+![Imagen](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/FIRMAS-DIGITALES/sd.jpg)
+
+En un esquema de firma digital RSA, Bob firma mensajes \(x_i\) y los envía junto con las firmas \(s_i\) y su clave pública a Alice. La clave pública de Bob es el par \((n, e)\), y su clave privada es \(d\).
+
+El objetivo de Oscar es realizar un ataque de intermediario, es decir, reemplazar la clave pública de Bob por la suya en el canal de comunicación. Su meta es alterar mensajes y proporcionarlos con una firma digital que se verifique correctamente en el lado de Alice. A continuación, se describen los pasos que Oscar debe seguir para llevar a cabo un ataque exitoso:
+
+## Pasos para el Ataque de Intermediario
+
+1. **Interceptar el mensaje:** Oscar debe de alguna manera obtener acceso al mensaje que originalmente estaba destinado a Bob.
+
+2. **Firmar el mensaje con su propia clave privada:** Una vez que Oscar tiene el mensaje, debe firmarlo con su propia clave privada para generar una nueva firma \(s'\). Ahora, el mensaje tiene una firma falsa.
+
+3. **Reemplazar la clave pública de Bob:** Oscar reemplaza la clave pública de Bob, que originalmente era \((n, e)\), por su propia clave pública \((n', e')\). Esto se hace en el canal de comunicación, de manera que cuando Alice reciba los datos, creerá que provienen de Bob.
+
+4. **Enviar el mensaje, firma y clave pública falsos a Alice:** Oscar envía el mensaje modificado, la nueva firma \(s'\), y su propia clave pública \((n', e')\) a Alice. Desde la perspectiva de Alice, todo parece correcto ya que los datos llevan la firma de Bob y se verifican correctamente con la clave pública de Oscar.
+
+## Consecuencias del Ataque
+
+Este tipo de ataque de intermediario puede tener graves consecuencias, ya que Alice podría creer que está comunicándose con Bob cuando en realidad está interactuando con Oscar. Esto podría llevar a la manipulación de mensajes y la difusión de información falsa.
+
+Para prevenir este tipo de ataques, es fundamental implementar medidas de seguridad, como el uso de canales seguros de comunicación y la verificación adecuada de las claves públicas de los comunicantes. Además, es importante proteger las claves privadas para que no caigan en manos equivocadas.
