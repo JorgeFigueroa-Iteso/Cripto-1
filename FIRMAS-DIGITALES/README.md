@@ -76,3 +76,31 @@ Dado el esquema de firma RSA con clave pública (n = 9797, e = 131):
 1. (x = 123, sig(x) = 6292) - **VÁLIDO**
 2. (x = 4333, sig(x) = 4768) - **INVÁLIDO**
 3. (x = 4333, sig(x) = 1424) - **VÁLIDO**
+
+# Sección 10.6 Falsificación Existencial en RSA
+
+Dado un esquema de firma RSA con la clave pública \( (n = 9797, e = 131) \), este documento demuestra cómo Oscar podría realizar un ataque de falsificación existencial, proporcionando un ejemplo con estos parámetros del esquema de firma digital RSA.
+
+## Contexto
+
+El receptor ha recibido \( (n, e) \) y puede usarlos para verificar el mensaje. Sin embargo, también podemos usarlos para que el receptor verifique nuestro mensaje falso.
+
+## Proceso de Ataque
+
+1. **Seleccionar una firma s arbitraria:**
+   Oscar toma una \( s \) arbitraria en el rango de {0,1,2,…,9796}.
+   
+2. **Calcular \( x \):**
+   Con la firma \( s \) seleccionada, Oscar calcula una \( x \) utilizando la ecuación: 
+   \[ x \equiv 2^{131} \mod 9797 \]
+   \[ x \equiv 1347 \]
+
+## Verificación del Receptor
+
+Cuando el receptor realiza la verificación de la firma, puede obtener los datos y pensar que son verídicos.
+\[ x \equiv 2^{131} \mod 9797 \]
+\[ x \equiv 1347 \]
+
+## Conclusion
+
+Este ejemplo demuestra cómo, bajo ciertas circunstancias, un atacante podría potencialmente manipular un esquema de firma RSA para hacer que un receptor crea que un mensaje falso es verídico.
