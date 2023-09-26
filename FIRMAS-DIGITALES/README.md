@@ -92,14 +92,15 @@ El receptor ha recibido \( (n, e) \) y puede usarlos para verificar el mensaje. 
    
 2. **Calcular \( x \):**
    Con la firma \( s \) seleccionada, Oscar calcula una \( x \) utilizando la ecuación: 
-   \[ x \equiv 2^{131} \mod 9797 \]
-   \[ x \equiv 1347 \]
+   x≡2^131 mod 9797
+   x≡1347
+
 
 ## Verificación del Receptor
 
 Cuando el receptor realiza la verificación de la firma, puede obtener los datos y pensar que son verídicos.
-\[ x \equiv 2^{131} \mod 9797 \]
-\[ x \equiv 1347 \]
+   x≡2^131 mod 9797
+   x≡1347
 
 ## Conclusion
 
