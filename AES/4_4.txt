@@ -1,0 +1,16 @@
+4.4. Addition in GF(24 ): Compute A(x) + B(x) mod P(x) in GF(24 ) using the ir-
+reducible polynomial P(x) = x4 + x + 1. What is the influence of the choice of the
+reduction polynomial on the computation?
+1. A(x) = x2 + 1, B(x) = x3 + x2 + 1
+  -  Al estar en un rango de GF(2), tratamos los numeros como un conjunto binario (1+0=1, 1+1=0)
+     a lo que podriamos resolver esto como una suma de polinomios normal:
+  = (x² + 1) + (x³ + x² + 1)
+  = (0x³ + 1x³) + (1x² + 1x²) + (1 + 1)
+  = 1 + 0 + 0
+  = x³ 
+     Por lo que nuestro resultado es x³
+
+2. A(x) = x2 + 1, B(x) = x + 1
+  = (x² + 1) + (x + 1)
+  = 1 + 1= 0
+  = x² + x

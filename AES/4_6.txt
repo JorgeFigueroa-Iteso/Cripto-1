@@ -1,0 +1,16 @@
+4.6. Compute in GF(2⁸):
+(x⁴ + x + 1)/(x⁷ + x⁶ + x³ + x² ),
+where the irreducible polynomial is the one used by AES, P(x) = x⁸ +x⁴ +x³ + x + 1.
+Note that Table 4.2 contains a list of all multiplicative inverses for this field.
+
+Del denominador, obtenemos la transformación binaria:
+  x⁷+ x⁶ + x³ + x²
+Donde un multiplicador 1 será 1 y un 0 será 0:
+  1100 1100 = CC
+Convertido a hexadecimal, buscaremos su multiplicativo inverso en la tabla 4.2:
+  1B = 0001 1011
+Lo convertimos a binario y multiplicamos el resultado por el numerador 
+  x⁵+x⁴+x²+x * x⁴+x+1 = x⁹+x⁸+x⁵+x⁴+x³+x = Q
+Ya habiendo aplicado el espacio manejado en GF(2), le aplicamos el modulo dividiendo entre P
+
+Q MOD P = x⁴+x²+x+1

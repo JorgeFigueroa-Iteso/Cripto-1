@@ -1,0 +1,21 @@
+Primero debemos canonizar el estandar de los polinomios irreducibles donde:
+a, b, y c pueden ser 1 y 0.
+x³+ax²+bx+1
+x⁴+ax³+bx²+cx+1
+
+Para los valores de grado 3 serian:
+x³+1x²+0x+1 = x³+x²+1
+x³+0x²+1x+1 = x³+x+1
+
+Para los valores de grado 4, se debe ser un poco mas selectivo, puesto que se debe analizar
+que ninguno de sus polinomios sea un producto de polinomios de grado menor:
+
+x⁴+0x³+0x²+0x+1 = x⁴+1         -> Puede factorizarse
+x⁴+0x³+0x²+1x+1 = x⁴+x+1       -> No puede factorizarse en polinomios menores
+x⁴+0x³+1x²+0x+1 = x⁴+x²+1      -> Puede factorizarse
+x⁴+0x³+1x²+1x+1 = x⁴+x²+x+1    -> Puede factorizarse
+x⁴+1x³+0x²+0x+1 = x⁴+x³+1      -> No puede factorizarse en polinomios menores 
+x⁴+1x³+0x²+1x+1 = x⁴+x³+x+1    -> No puede factorizarse en polinomios menores
+x⁴+1x³+1x²+0x+1 = x⁴+x³+x²+1   -> Puede factorizarse
+x⁴+1x³+1x²+1x+1 = x⁴+x³+x²+x+1 -> No puede factorizarse en polinomios menores
+
