@@ -22,7 +22,8 @@ Los capítulos tratados se encuentran bajo cada categoría, y dentro de las carp
 * 2° lugar: 50 pts.
 * 3° lugar: 40 pts.
 
-### ENTREGAR A MÁS TARDAR
+### ENTREGA
+* 41 ejercicios
 * Lunes 02 - Octubre
 * EXAMEN 04 - Octubre
 
