@@ -8,7 +8,7 @@ Sería 49 ya que phi que es 640 y el número 49 son coprimos
 
 2. Compute the corresponding private key Kpr = (p, q, d). Use the extended Euclidean algorithm for the inversion and point out every calculation step.
 
-7_1.py
+[7_1.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/RSA/7_1.py)
 
 ## 7.2. Computing modular exponentiation efficiently is inevitable for the practicability of RSA. Compute the following exponentiations xe mod m applying the squareand-multiply algorithm:
 
@@ -17,7 +17,7 @@ Sería 49 ya que phi que es 640 y el número 49 son coprimos
 
 After every iteration step, show the exponent of the intermediate result in binarynotation.
 
-7_2.py
+[7_2.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/RSA/7_2.py)
 
 ## 7.3. Encrypt and decrypt by means of the RSA algorithm with the following system parameters:
 
@@ -26,7 +26,7 @@ After every iteration step, show the exponent of the intermediate result in bina
 
 Only use a pocket calculator at this stage.
 
-7_3.py
+[7_3.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/RSA/7_3.py)
 
 ## 7.4. One major drawback of public-key algorithms is that they are relatively slow.
 In Sect. 7.5.1 we learned that an acceleration technique is to use short exponents e.
@@ -75,14 +75,14 @@ applications where we want to accelerate decryption?
 
 ## 7.6. Verify the RSA with CRT example in the chapter by computing yd = 15103 mod 143 using the square-and-multiply algorithm.
 
-7_6.py
+[7_6.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/RSA/7_6.py)
 
 ## 7.7. An RSA encryption scheme has the set-up parameters p = 31 and q = 37. The public key is e = 17.
 
 1. Decrypt the ciphertext y = 2 using the CRT.
 2. Verify your result by encrypting the plaintext without using the CRT.
 
-7_7.py
+[7_7.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/RSA/7_7.py)
 
 ## 7.8. Popular RSA modulus sizes are 1024, 2048, 3072 and 4092 bit.
 1. How many random odd integers do we have to test on average until we expect to
