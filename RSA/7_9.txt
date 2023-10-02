@@ -1,0 +1,23 @@
+7.9. One of the most attractive applications of public-key algorithms is the estab-
+lishment of a secure session key for a private-key algorithm such as AES over an
+insecure channel.
+Assume Bob has a pair of public/private keys for the RSA cryptosystem. Develop
+a simple protocol using RSA which allows the two parties Alice and Bob to agree
+on a shared secret key. Who determines the key in this protocol, Alice, Bob, or both?
+
+    Generación de Claves:
+        Bob genera un par de claves RSA: una clave pública (N_B, e_B) y una clave privada (d_B).
+        Alice también genera un par de claves RSA: una clave pública (N_A, e_A) y una clave privada (d_A).
+
+    Compartir Clave Pública:
+        Bob comparte su clave pública (N_B, e_B) con Alice, y Alice comparte su clave pública (N_A, e_A) con Bob. Esto puede hacerse de manera segura a través de un canal inseguro, ya que las claves públicas no revelan la clave privada.
+
+    Generación de la Clave Compartida:
+        Para establecer la clave secreta compartida, cada parte realiza la siguiente operación utilizando su propia clave privada y la clave pública del otro:
+            Bob: Calcula la clave compartida K_B = (N_B, e_B) ^ d_B mod N_A
+            Alice: Calcula la clave compartida K_A = (N_A, e_A) ^ d_A mod N_B
+
+    Resultado:
+        Ahora, tanto Alice como Bob tienen la misma clave secreta compartida, que puede usarse para cifrar y descifrar datos utilizando un algoritmo de cifrado simétrico como AES.
+
+

@@ -1,0 +1,12 @@
+
+7.8. Popular RSA modulus sizes are 1024, 2048, 3072 and 4092 bit.
+1. How many random odd integers do we have to test on average until we expect to
+find one that is a prime?
+  -  En promedio, debemos probar alrededor de e^N números impares aleatorios para 
+     encontrar uno que sea primo, donde N es el tamaño del módulo RSA en bits.
+
+
+
+2. Derive a simple formula for any arbitrary RSA modulus size.
+  -  La fórmula simple para cualquier tamaño de módulo RSA (N bits) es: Número
+     de intentos esperados ≈ e^N.

@@ -1,0 +1,11 @@
+7.5. In practice the short exponents e = 3, 17 and 216 + 1 are widely used.
+
+1. Why can’t we use these three short exponents as values for the exponent d in
+applications where we want to accelerate decryption?
+  -  No podemos usar estos exponentes cortos como d en RSA para descifrar porque sería 
+     vulnerable a ataques de fuerza bruta debido a su previsibilidad.
+
+2. Suggest a minimum bit length for the exponent d and explain your answer.
+  -  La longitud mínima recomendada para d en RSA es igual o mayor que la longitud de bits 
+     del módulo N para garantizar la seguridad y evitar ataques de factorización o fuerza bruta.
+

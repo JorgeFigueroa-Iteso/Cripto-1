@@ -1,0 +1,22 @@
+In this exercise, you are asked to attack an RSA encrypted message. Imagine
+being the attacker: You obtain the ciphertext y = 1141 by eavesdropping on a certain
+connection. The public key is k pub = (n, e) = (2623, 2111).
+1. Consider the encryption formula. All variables except the plaintext x are known.
+Why can’t you simply solve the equation for x?
+  -  No puedes resolver la ecuación para x porque no conoces el valor de n, que es el
+     módulo utilizado en RSA, y factorizar n es computacionalmente difícil.
+
+
+2. In order to determine the private key d, you have to calculate d ≡ e−1 mod Φ (n).
+There is an efficient expression for calculating Φ (n). Can we use this formula
+here?
+  -  La fórmula eficiente para calcular Φ(n) requiere conocer los valores de p y q,
+     que no están disponibles en este escenario.
+
+
+3. Calculate the plaintext x by computing the private key d through factoring n =
+p · q. Does this approach remain suitable for numbers with a length of 1024 bit
+or more?
+  -  La factorización de n se vuelve extremadamente difícil a medida que el tamaño de
+     n aumenta, y para números RSA de 1024 bits o más, puede ser prácticamente imposible 
+     de realizar en un tiempo razonable.

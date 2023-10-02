@@ -1,0 +1,22 @@
+7.12. We now show how an attack with chosen ciphertext can be used to break an
+RSA encryption.
+1. Show that the multiplicative property holds for RSA, i.e., show that the product
+of two ciphertexts is equal to the encryption of the product of the two respective
+plaintexts
+  -  La propiedad multiplicativa se cumple en el cifrado RSA, lo que significa que el producto 
+     de dos textos cifrados es igual a la encriptación del producto de los dos textos originales 
+     correspondientes.
+
+
+2. This property can under certain circumstances lead to an attack. Assume that
+Bob first receives an encrypted message y1 from Alice which Oscar obtains by
+eavesdropping. At a later point in time, we assume that Oscar can send an inno-
+cent looking ciphertext y2 to Bob, and that Oscar can obtain the decryption of y2 .
+In practice this could, for instance, happen if Oscar manages to hack into Bob’s
+system such that he can get access to decrypted plaintext for a limited period of
+time.
+  -  Esta propiedad puede llevar a una situación de ataque en la que un espía, Oscar, 
+     puede enviar un texto cifrado que parece inocente (y2) a Bob después de interceptar 
+     un mensaje cifrado (y1) de Alice. Oscar puede entonces obtener la desencriptación de y2, 
+     posiblemente mediante la intrusión en el sistema de Bob para acceder a los textos originales 
+     durante un tiempo limitado.    

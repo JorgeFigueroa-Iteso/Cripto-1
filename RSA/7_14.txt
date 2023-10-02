@@ -1,0 +1,45 @@
+7.14. The modulus of RSA has been enlarged over the years in order to thwart im-
+proved attacks. As one would assume, public-key algorithms become slower as the
+modulus length increases. We study the relation between modulus length and perfor-
+mance in this problem. The performance of RSA, and of almost any other public-key
+algorithm, is dependent on how fast modulo exponentiation with large numbers can
+be performed.
+
+Supongamos que una multiplicación o elevación al cuadrado de módulo con
+números de k bits toma c · k^2 ciclos de reloj, donde c es una constante.
+Si solo se considera el cifrado/descifrado en sí con un exponente de longitud
+ completa y el algoritmo de elevar al cuadrado y multiplicar.
+
+Para comparar el cifrado/descifrado RSA con 1024 bits y RSA con 512 bits,
+podemos calcular la relación entre sus tiempos en función del tamaño de los
+números (bits). Supongamos que t_1024 es el tiempo en ciclos de reloj para
+operaciones RSA con 1024 bits y t_512 es el tiempo en ciclos de reloj para
+operaciones RSA con 512 bits. Entonces, la relación de velocidad sería:
+
+(t_1024 / t_512) = ((c * 1024^2) / (c * 512^2))
+
+La constante 'c' se cancela y podemos simplificar la expresión:
+
+(t_1024 / t_512) = (1024^2 / 512^2) = (2^20 / 2^18) = 2^2 = 4
+
+Por lo tanto, en promedio, RSA con 1024 bits es aproximadamente 4
+veces más lento que RSA con 512 bits utilizando el algoritmo de
+elevar al cuadrado y multiplicar.
+    
+En la práctica, el algoritmo de Karatsuba se utiliza a menudo para la multiplicación
+de números largos en criptografía, y su complejidad asintótica es proporcional a k log2 3.
+Supongamos que esta técnica más avanzada requiere c · k log2 3 = c · k^1.585 ciclos de reloj
+ para la multiplicación o la elevación al cuadrado, donde c es una constante. Nuevamente
+podemos emplear algo parecido para determinar el tiempo de ejecución en el algoritmo de Karatsuba
+
+(t_1024 / t_512) = ((c * 1024^1.585) / (c * 512^1.585))
+
+La constante 'c' se cancela y podemos simplificar la expresión:
+
+(t_1024 / t_512) = (1024^1.585 / 512^1.585)
+
+Para calcular esto exactamente, necesitaríamos conocer el valor exacto de la constante 'c' para el
+algoritmo de Karatsuba. Sin embargo, podemos decir que si el algoritmo de Karatsuba es más eficiente
+que el algoritmo estándar (c * k^2), entonces la relación t_1024 / t_512 será menor que 4. Es decir,
+RSA con 1024 bits será más rápido en comparación con RSA con 512 bits cuando se utiliza el algoritmo
+ de Karatsuba. La cantidad exacta dependerá de los valores específicos de 'c' para cada algoritmo.

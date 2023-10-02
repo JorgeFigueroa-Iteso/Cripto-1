@@ -1,0 +1,33 @@
+7.4. One major drawback of public-key algorithms is that they are relatively slow.
+In Sect. 7.5.1 we learned that an acceleration technique is to use short exponents e.
+Now we study short exponents in this problem in more detail.
+
+1. Assume that in an implementation of the RSA cryptosystem one modular squar-
+ing takes 75% of the time of a modular multiplication. How much quicker is
+one encryption on average if instead of a 2048-bit public key the short exponent
+e = 216 + 1 is used? Assume that the square-and-multiply algorithm is being used
+in both cases.
+  -   Supongamos que en una implementación del criptosistema RSA, una operación de cuadrado
+      modular toma el 75% del tiempo de una multiplicación modular. Si en lugar de una clave 
+      pública de 2048 bits se utiliza el exponente corto e = 2^16 + 1, el cifrado sería
+      considerablemente más rápido en promedio debido a que requiere muchas menos operaciones.
+
+
+
+2. Most short exponents are of the form e = 2n + 1. Would it be advantageous to
+use exponents of the form 2n − 1? Justify your answer.
+  -   No sería ventajoso utilizar exponentes de la forma 2n - 1 en RSA. Los exponentes en RSA 
+      deben ser coprimos con φ(N), donde N es el módulo del sistema. Si e = 2n - 1, sería un
+      número par y, en la mayoría de los casos, no sería coprimo con φ(N), lo que resultaría 
+      en una clave pública inválida para RSA.
+
+
+
+3. Compute the exponentiation xe mod 29 of x = 5 with both variants of e from
+above for n = 4. Use the square-and-multiply algorithm and show each step of
+your computation.
+  -   Para calcular la exponenciación xe mod 29 de x = 5 con ambas variantes de:
+        e (e = 2^16 + 1
+        e = 2n + 1 para n = 4)
+      puedes utilizar el algoritmo de cuadrado y multiplicación. El proceso implica
+      seguir los pasos para cada bit de e y realizar las operaciones correspondientes.

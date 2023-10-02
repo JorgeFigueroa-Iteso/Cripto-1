@@ -1,0 +1,43 @@
+7.13. In this exercise, we illustrate the problem of using nonprobabilistic cryptosys-
+tems, such as schoolbook RSA, imprudently. Nonprobabilistic means that the same
+sequence of plaintext letters maps to the same ciphertext. This allows traffic analysis
+(i.e., to draw some conclusion about the cleartext by merely observing the cipher-
+text) and in some cases even to the total break of the cryptoystem. The latter holds
+especially if the number of possible plaintexts is small. Suppose the following situ-
+ation:
+Alice wants to send a message to Bob encrypted with his public key pair (n, e).
+Therefore, she decides to use the ASCII table to assign a number to each character
+(Space → 32, ! → 33, . . . , A → 65, B → 66, . . . , ∼→ 126) and to encrypt them
+separately.
+
+1. Oscar eavesdrops on the transferred ciphertext. Describe how he can successfully
+decrypt the message by exploiting the nonprobabilistic property of RSA.
+  -  Oscar puede descifrar con éxito el mensaje explotando la propiedad no probabilística
+     de RSA de la siguiente manera:
+        - Él sabe que cada carácter se cifra por separado, por lo que podria identificar los
+          valores ASCII de los caracteres individuales en el texto cifrado.
+        - Dado que RSA es determinista (no probabilístico), el mismo valor de texto sin formato
+          siempre producirá el mismo valor de texto cifrado. Oscar puede utilizar una simple búsqueda
+          en una tabla para hacer coincidir los valores de texto cifrado con sus correspondientes valores
+          ASCII de texto sin formato.
+        - Una vez que Oscar haya determinado los valores ASCII de todos los caracteres en el texto cifrado,
+          puede convertirlos nuevamente en caracteres según la tabla ASCII para revelar el mensaje original.
+
+
+
+2. Bob’s RSA public key is (n, e) = (3763, 11). Decrypt the ciphertext
+y = 2514, 1125, 333, 3696, 2514, 2929, 3368, 2514
+with the attack proposed in 1. For simplification, assume that Alice only chose
+capital letters A–Z during the encryption.
+  -  Utilizando la clave pública de Bob (n, e) = (3763, 11) y el ataque descrito anteriormente
+     Oscar puede descifrar el texto cifrado y = 2514, 1125, 333, 3696, 2514, 2929, 3368, 2514 para
+     revelar el mensaje.
+
+3. Is the attack still possible if we use the OAEP padding? Exactly explain your
+answer.
+  -  Si se utiliza el relleno OAEP (Optimal Asymmetric Encryption Padding), el ataque
+     descrito en el punto 1 no sería posible. OAEP está diseñado para agregar relleno
+     probabilístico al texto sin formato antes de cifrarlo, lo que garantiza que el mismo
+     texto sin formato no produzca el mismo texto cifrado.
+
+     https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding

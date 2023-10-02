@@ -1,0 +1,28 @@
+7.10. In practice, it is sometimes desirable that both communication parties influ-
+ence the selection of the session key. For instance, this prevents the other party from
+choosing a key which is a weak key for a symmetric algorithm. Many block ciphers
+such as DES and IDEA have weak keys. Messages encrypted with weak keys can
+be recovered relatively easily from the ciphertext.
+Develop a protocol similar to the one above in which both parties influence the
+key. Assume that both Alice and Bob have a pair of public/private keys for the RSA
+cryptosystem. Please note that there are several valid approaches to this problem.
+Show just one.
+
+    Generación de Claves:
+        Bob genera un par de claves RSA: una clave pública (N_B, e_B) y una clave privada (d_B).
+        Alice también genera un par de claves RSA: una clave pública (N_A, e_A) y una clave privada (d_A).
+
+    Compartir Clave Pública y Sesión Aleatoria:
+        Bob comparte su clave pública (N_B, e_B) con Alice, y Alice comparte su clave pública (N_A, e_A) con Bob.
+        Ambos participantes generan una cadena de bits aleatoria de la misma longitud que la clave de sesión deseada, que llamaremos "K_random".
+
+    Mezcla de las Cadenas Aleatorias:
+
+        Tanto Alice como Bob mezclan sus cadenas aleatorias generadas (K_random) utilizando una operación XOR. Esto significa que cada uno influye en la formación de la clave de sesión secreta sin que el otro pueda predecirla.
+            Alice: Calcula K_mix = K_random ^ K_B
+            Bob: Calcula K_mix = K_random ^ K_A
+
+    Aquí, "^" representa la operación XOR entre las cadenas de bits.
+
+    Resultado:
+        Ahora, ambos tienen la misma clave de sesión secreta K_mix, que es el resultado de la mezcla de sus cadenas aleatorias. Esta clave puede usarse para cifrar y descifrar datos utilizando un algoritmo de cifrado simétrico como AES.
