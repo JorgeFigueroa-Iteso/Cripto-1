@@ -42,4 +42,5 @@ Sin embargo, no es seguro. Para un determinado texto plano, puede haber múltipl
 - **Keeping the IV secret in OFB mode does not make an exhaustive key search more complex.**
  1. Describe how we can perform a brute-force attack with unknown IV.
  2. What are the requirements regarding plaintext and ciphertext?
+ - Para los pares de texto sin formato/texto cifrado seleccionados, podemos obtener el flujo de claves que fueron cifrados mediante **XOR**.</br> Esto significa que sabemos qué entrada se le dio al código primitivo para todos los bloques excepto el primer bloque (porque el flujo de claves se convierte en el IV del siguiente bloque).</br> Por lo que podemos intentar forzar una clave para que genere un flujo de claves a partir de entradas conocidas. Esto equivale a forzar un número en modo **CBC**. </br>El IV se puede obtener descifrando el flujo de claves del primer bloque una vez que haya alcanzado un alto nivel de confianza de que su clave de fuerza bruta no es un falso positivo.
 
