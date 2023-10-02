@@ -2,6 +2,7 @@
 
 ## ENTREGABLES
 * Github completo ó Documento del trabajo
+
 Se trabajó en Github, esto para evitar problemas de compatibilidad y riezgo de olvidar ejercicios/códigos de solución.
 
 Los capítulos tratados se encuentran bajo cada categoría, y dentro de las carpetas correspondientes se encuentra la documentación completa de sus ejercicios/códigos
