@@ -29,7 +29,7 @@ For the AES algorithm, some computations are done by Galois Fields (GF).
 With the following problems, we practice some basic computations.
 Compute the multiplication and addition table for the prime field GF(7). A multiplication table is a square (here: 7 × 7) table which has as its rows and columns all field elements. Its entries are the products of the field element at the corresponding row and column. Note that the table is symmetric along the diagonal. The addition table is completely analogous but contains the sums of field elements as entries.
 
-4_2.py
+[4_2.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4_2.py)
 
 ## 4.4 Addition
 
@@ -125,6 +125,6 @@ zero.
 3. How many output bits have changed? Remark that we only consider a single
 round — after every further round, more output bits will be affected (avalanche effect).
 
-4_10.py
+[4_10.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4_10.py)
 
 
