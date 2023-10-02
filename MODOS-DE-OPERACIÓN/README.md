@@ -44,3 +44,8 @@ Sin embargo, no es seguro. Para un determinado texto plano, puede haber múltipl
  2. What are the requirements regarding plaintext and ciphertext?
  - Para los pares de texto sin formato/texto cifrado seleccionados, podemos obtener el flujo de claves que fueron cifrados mediante **XOR**.</br> Esto significa que sabemos qué entrada se le dio al código primitivo para todos los bloques excepto el primer bloque (porque el flujo de claves se convierte en el IV del siguiente bloque).</br> Por lo que podemos intentar forzar una clave para que genere un flujo de claves a partir de entradas conocidas. Esto equivale a forzar un número en modo **CBC**. </br>El IV se puede obtener descifrando el flujo de claves del primer bloque una vez que haya alcanzado un alto nivel de confianza de que su clave de fuerza bruta no es un falso positivo.
 
+## Ejercicio 5.5
+- **Describe how the OFB mode can be attacked if the IV is not different for each execution of the encryption operation.**
+ - Suponiendo que la clave sigue siendo la misma, el cifrado con el mismo IV producirá exactamente el mismo flujo de claves que los intentos de cifrado anteriores.
+ </br>Sin conocer el par texto sin formato/texto cifrado, no hay forma de utilizar esta información para un ataque criptográfico. Sin embargo, si elige texto sin formato para un determinado bloque de mármol en el mensaje m1, esto se puede aplicar XOR con el texto cifrado conocido para derivar el flujo de claves para ese bloque. 
+ </br>El flujo de claves se puede utilizar para descifrar el bloque b′i en mensaje m2 (cifrado con el mismo IV y generando así el mismo flujo de claves).
