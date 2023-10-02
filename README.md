@@ -26,6 +26,13 @@ Los capítulos tratados se encuentran bajo cada categoría, y dentro de las carp
 * Lunes 02 - Octubre
 * EXAMEN 04 - Octubre
 
+## STATUS DE ENTREGA
+* [x] AES
+* [x] DES
+* [x] DIFFIE-HELLMAN
+* [x] FIRMAS DIGITALES
+* [x] MODOS DE OPERACIÓN
+* [x] RSA
 
 ## Authors
 
