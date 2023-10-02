@@ -1,7 +1,7 @@
 # Solución de problemas del primer libro de Criptografía
 
 ## ENTREGABLES
-* Github completo ó Documento del trabajo
+* <strong>Github</strong> ó Documento del trabajo
 
 Se trabajó en Github, esto para evitar problemas de compatibilidad y riezgo de olvidar ejercicios/códigos de solución.
 
