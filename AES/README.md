@@ -38,7 +38,7 @@ that the irreducible polynomial is P(x) = x 3 + x + 1. The multiplication table 
 this case a 8 × 8 table. (Remark: You can do this manually or write a program for
 it.)
 
-[4.3.jpg](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4.3.jpg)
+![4.3.jpg](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4.3.jpg)
 
 ## 4.4 Addition
 
@@ -67,7 +67,7 @@ reduction polynomial on the computation?
 1. A(x) = x 2 + 1, B(x) = x 3 + x 2 + 1
 2. A(x) = x 2 + 1, B(x) = x + 1
 
-[4.5.jpg](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4.5.jpg)
+![4.5.jpg](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4.5.jpg)
 
 
 ## 4.6 GF
