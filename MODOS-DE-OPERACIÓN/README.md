@@ -210,3 +210,49 @@ the width (in bit) of each line in your diagram.
 
 ### **Finalizar la verificación:**
 - El receptor debe informar el resultado de la verificación al remitente. Si la firma es válida, el mensaje se considera autenticado y no ha sido modificado en tránsito. Si la firma es inválida, el mensaje se considera sospechoso y no debe confiarse.
+
+## Ejercicio 5.11
+### Besides simple bit errors, the deletion or insertion of a bit yields even more
+severe effects since the synchronization of blocks is disrupted. In most cases, the
+decryption of subsequent blocks will be incorrect. A special case is the CFB mode
+with a feedback width of 1 bit. Show that the synchronization is automatically re-
+stored after κ + 1 steps, where κ is the block size of the block cipher.
+
+En el modo CFB con un ancho de retroalimentación de 1 bit, la sincronización se restaura automáticamente 
+después de κ + 1 pasos, donde κ es el tamaño del bloque del cifrador de bloques.
+
+Esto se debe a que:
+
+ - En el modo CFB, cada bloque de salida se combina mediante XOR con un bit del texto claro en cada paso.
+ - Con un ancho de retroalimentación de 1 bit, el cifrado se procesa de un bit del texto cifrado a la vez.
+ - Después de procesar κ bits (donde κ es el tamaño del bloque), el registro de desplazamiento de 
+  retroalimentación se habrá llenado por completo con bits del texto cifrado.
+ - El siguiente bit del texto claro se combina mediante XOR con el primer bit del texto cifrado en 
+  el registro de desplazamiento.
+ - Esto efectivamente desplaza hacia afuera el primer bit del texto cifrado y desplaza hacia adentro 
+  el siguiente bit del texto cifrado, manteniendo la sincronización.
+ - Por lo tanto, la sincronización se restaura después de κ + 1 pasos, donde κ es el tamaño del bloque del
+  cifrador de bloques.
+
+
+## Ejercicio 5.12
+
+Búsqueda de clave pura sin uso de memoria:
+ - Número de claves posibles: 2^56 para cada K1 y K2.
+ - Número total de claves para buscar: 2^56 * 2^56 = 2^112.
+ - Número de claves por segundo: 107.
+ - Tiempo para buscar todo el espacio de claves: (2^112) / (107 claves/segundo) = 2^112 / 10^7 segundos.
+ - Costo por circuito integrado (IC): $5.
+ - Sobrecarga para construir la máquina: 50%.
+
+Para calcular el costo, necesitamos considerar la cantidad de circuitos integrados requeridos:
+ - Costo = (2^112 / 10^7 segundos) * $5 * (1 + 0.5) = 2^112 * $5 / 2 * 10^7 = $2^112 / 2 * 10^7.
+
+Búsqueda de clave con el ataque meet-in-the-middle (tiempo-memoria):
+ - Para este escenario, necesitamos almacenar las salidas intermedias en la búsqueda. Sin embargo,
+  la cantidad de almacenamiento requerido y otros detalles no se proporcionan en la pregunta.
+ - Costos por debajo de $1 millón con la Ley de Moore: 
+ - La Ley de Moore predice que la capacidad de procesamiento de los circuitos integrados se duplicará
+  aproximadamente cada dos años. Por lo tanto, los costos de la búsqueda de clave disminuirán a medida
+  que pase el tiempo. Para determinar cuándo los costos caerán por debajo de $1 millón, se requeriría una
+  estimación más precisa de los factores involucrados, como la velocidad de búsqueda y los costos de hardware.
