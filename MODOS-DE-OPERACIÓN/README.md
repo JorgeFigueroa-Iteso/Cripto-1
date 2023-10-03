@@ -82,6 +82,60 @@ diagram (cf. the descripton of a byte mode at the end of Sect. 5.1.4).
 
 ```
 
+## Ejercicio 5.7
+### 5.7. As is so often true in cryptography, it is easy to weaken a seemingly strong scheme by small modifications. Assume a variant of the OFB mode by which we only feed back the 8 most significant bits of the cipher output. We use AES and fill the remaining 120 input bits to the cipher with 0s.146 5 More About Block Ciphers
+1. Draw a block diagram of the scheme.
+
+```
+    +-----------------+
+    | Byte de texto  |
+    | claro (Plaintext)|
+    +-----------------+
+            |
+            V
+      +-----------+
+      | AES Block |
+      |   Cipher  |
+      +-----------+
+            |
+            V
+        +---+   (128 bits)
+        | 8 | ------>
+        |MSB| ---+
+        +---+    |
+                  |
+                  V
+                +-----------+
+                |   Cifrado |
+                |   CFB     |
+                +-----------+
+                  |
+                  V
+                +-----------+
+                |   Cifrado |
+                |   Texto   |
+                |   Cifrado |
+                +-----------+
+```
+
+2. Why is this scheme weak if we encrypt moderately large blocks of plaintext, say
+100 kByte? What is the maximum number of known plaintexts an attacker needs
+to completely break the scheme?
+
+Esta variante es débil cuando se cifran bloques de texto más grandes (por ejemplo, 100 kBytes) porque solo
+se están utilizando los 8 bits más significativos del cifrado de bloque AES, lo que limita la variabilidad 
+en la secuencia cifrada. Esto facilita la predicción y el ataque, ya que los 120 bits restantes se llenan 
+con ceros, lo que reduce la seguridad. El atacante necesita un número relativamente pequeño de textos claros 
+conocidos para romper la clave.
+
+3. Let the feedback byte be denoted by FB. Does the scheme become cryptograph-
+ically stronger if we feedback the 128-bit value FB, FB, . . . , FB to the input (i.e.,
+we copy the feedback byte 16 times and use it as AES input)?
+
+La retroalimentación del valor de 128 bits en lugar de solo los 8 bits más significativos mejoraría la fortaleza 
+del cifrado, ya que aumentaría la variabilidad en la secuencia cifrada. Esto haría que el esquema fuera más seguro 
+y requeriría un número mucho mayor de textos claros conocidos para un ataque exitoso.
+
 ## Ejercicio 5.8
 ###  **In the text, a variant of the CFB mode is proposed which encrypts individual
 bytes. Draw a block diagram for this mode when using AES as block cipher. Indicate
