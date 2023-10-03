@@ -31,6 +31,15 @@ Compute the multiplication and addition table for the prime field GF(7). A multi
 
 [4_2.py](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4_2.py)
 
+## 4.3 Multiplication
+
+Generate the multiplication table for the extension field GF(2 3 ) for the case
+that the irreducible polynomial is P(x) = x 3 + x + 1. The multiplication table is in
+this case a 8 × 8 table. (Remark: You can do this manually or write a program for
+it.)
+
+[4.3.jpg](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4.3.jpg)
+
 ## 4.4 Addition
 
 Addition in GF(24 ): Compute A(x) + B(x) mod P(x) in GF(24 ) using the ir-
@@ -49,6 +58,17 @@ reduction polynomial on the computation?
   = (x² + 1) + (x + 1)
   = 1 + 1= 0
   = x² + x
+
+## 4.5 More Multiplication
+
+Multiplication in GF(2 4 ): Compute A(x) · B(x) mod P(x) in GF(2 4 ) using the
+irreducible polynomial P(x) = x 4 + x + 1. What is the influence of the choice of the
+reduction polynomial on the computation?
+1. A(x) = x 2 + 1, B(x) = x 3 + x 2 + 1
+2. A(x) = x 2 + 1, B(x) = x + 1
+
+[4.5.jpg](https://github.com/JorgeFigueroa-Iteso/Cripto-1/blob/main/AES/4.5.jpg)
+
 
 ## 4.6 GF
 
