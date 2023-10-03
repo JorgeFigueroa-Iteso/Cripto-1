@@ -51,6 +51,75 @@ Sin embargo, no es seguro. Para un determinado texto plano, puede haber múltipl
  </br>Sin conocer el par texto sin formato/texto cifrado, no hay forma de utilizar esta información para un ataque criptográfico. Sin embargo, si elige texto sin formato para un determinado bloque de mármol en el mensaje m1, esto se puede aplicar XOR con el texto cifrado conocido para derivar el flujo de claves para ese bloque. 
  </br>El flujo de claves se puede utilizar para descifrar el bloque b′i en mensaje m2 (cifrado con el mismo IV y generando así el mismo flujo de claves).
 
+
+## Ejercicio 5.6
+### **Propose an OFB mode scheme which encrypts one byte of plaintext at a time, e.g., for encrypting key strokes from a remote keyboard. The block cipher used is AES. 
+Perform one block cipher operation for every new plaintext byte. Draw a block
+diagram of your scheme and pay particular attention to the bit lengths used in your
+diagram (cf. the descripton of a byte mode at the end of Sect. 5.1.4).
+
+```
+            +------------------------+
+            |                        |
+            |                        v
+ Plaintext Byte ---->[XOR]----> Ciphertext Byte
+               ^        |
+               |        |
+               |  +----------+
+               |  | Extract  |
+               |  | 1st Byte|
+               |  +----------+
+               |        |
+               |        v
+               |  +-------------+
+               |  |   AES      |
+               +--| Encryption |
+                  |   (Key)    |
+                  +-----^------+
+                        |
+                  128-bit IV
+            (Updated for each byte)
+
+```
+
+## Ejercicio 5.8
+###  **In the text, a variant of the CFB mode is proposed which encrypts individual
+bytes. Draw a block diagram for this mode when using AES as block cipher. Indicate
+the width (in bit) of each line in your diagram.
+
+```
+[Plaintext (8 bits)]
+        |
+        V
+      +---------------------+
+      |      XOR Gate       |<----------+
+      +---------------------+           |
+              |                         |
+              V                         |
+[Ciphertext (8 bits)]                   |
+              |                         |
+              |                         |
+      +---------------+                 |
+      |               |                 |
+      |   Shift       |                 |
+      |  Register     |                 |
+      | (120 bits)    |<----------------+
+      |               | 
+      +-------|-------+
+              |
+[IV or prev. AES output (128 bits)]
+        |
+        V
+      +---------------------+
+      |    AES Encryption   |
+      +---------------------+
+              |
+              |------------------------+
+              |                        |
+[Most significant 8 bits]--------------+
+```
+
+
 ## Ejercicio 5.9
 ### **We are using AES in counter mode for encrypting a hard disk with 1 TB of capacity.**</br>What is the maximum length of the IV?
 - En AES-CTR (modo de contador), el IV (Vector de Inicialización) debe ser único para cada bloque de datos que se cifra. 
